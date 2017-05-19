@@ -1,0 +1,29 @@
+{
+  "name": "vvs-delay-api",
+  "version": "1.0.0",
+  "description": "Interface to the Cloudant vvs-delay-db",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start_dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elisae/vvs-delay-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elisae/vvs-delay-api/issues"
+  },
+  "homepage": "https://github.com/elisae/vvs-delay-api#readme",
+  "dependencies": {
+    "cfenv": "1.0.x",
+    "cloudant": "^1.7.1",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

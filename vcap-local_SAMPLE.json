@@ -1,0 +1,26 @@
+{
+ "VCAP_SERVICES": {
+  "cloudantNoSQLDB": [
+   {
+    "credentials": {
+     "host": "XXX-bluemix.cloudant.com",
+     "password": "XXX",
+     "port": 443,
+     "url": "https://XXX-bluemix:XXX@XXX-bluemix.cloudant.com",
+     "username": "XXX-bluemix"
+    },
+    "label": "cloudantNoSQLDB",
+    "name": "vvs-delay-db",
+    "plan": "Lite",
+    "provider": null,
+    "syslog_drain_url": null,
+    "tags": [
+     "data_management",
+     "ibm_created",
+     "lite",
+     "ibm_dedicated_public"
+    ]
+   }
+  ]
+ }
+}
