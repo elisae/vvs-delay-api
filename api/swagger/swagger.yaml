@@ -1,11 +1,12 @@
 swagger: "2.0"
 info:
   version: "0.0.1"
-  title: Hello World App
+  title: vvs-delay-api
+  description: Provides access to the vvs-delay-db
 # during dev, should point to your local machine
 host: localhost:8080
 # basePath prefixes all resource paths
-basePath: /
+basePath: /db
 #
 schemes:
   # tip: remove http to make production-grade
@@ -21,6 +22,7 @@ paths:
   /entries:
     x-swagger-router-controller: entries
     get:
+      tags: ["db"]
       description: Returns entries with a timestamp >= 'startTime' and < 'endTime'
       operationId: getByTimestamp
       parameters:
@@ -46,6 +48,7 @@ paths:
   /entries/{id}:
     x-swagger-router-controller: entries
     get:
+      tags: ["db"]
       description: Returns entry with given id
       operationId: getById
       parameters:

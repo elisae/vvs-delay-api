@@ -8,9 +8,11 @@
   "license": "",
   "main": "app.js",
   "dependencies": {
+    "cfenv": "^1.0.4",
     "cloudant": "^1.8.0",
     "express": "^4.12.3",
-    "swagger-express-mw": "^0.1.0"
+    "swagger-express-mw": "^0.1.0",
+    "swagger-tools": "^0.10.1"
   },
   "devDependencies": {
     "should": "^7.1.0",
