@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Hello World App
+# during dev, should point to your local machine
+host: localhost:8080
+# basePath prefixes all resource paths
+basePath: /
+#
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /entries:
+    x-swagger-router-controller: entries
+    get:
+      description: Returns entries with a timestamp >= 'startTime' and < 'endTime'
+      operationId: getByTimestamp
+      parameters:
+        - name: startTime
+          in: query
+          description: Minimum timestamp milliseconds
+          required: false
+          type: integer
+        - name: endTime
+          in: query
+          description: Maximum timestamp milliseconds
+          required: false
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetEntriesResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /entries/{id}:
+    x-swagger-router-controller: entries
+    get:
+      description: Returns entry with given id
+      operationId: getById
+      parameters:
+        - name: id
+          type: string
+          in: path
+          required: true
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/GetEntriesResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  GetEntriesResponse:
+    required:
+      - docs
+    properties:
+      docs:
+        type: array
+        items:
+          type: object
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string

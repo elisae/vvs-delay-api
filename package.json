@@ -1,29 +1,23 @@
 {
   "name": "vvs-delay-api",
-  "version": "1.0.0",
-  "description": "Interface to the Cloudant vvs-delay-db",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "start_dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elisae/vvs-delay-api.git"
-  },
+  "version": "0.0.1",
+  "private": true,
+  "description": "New Swagger API Project",
+  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/elisae/vvs-delay-api/issues"
-  },
-  "homepage": "https://github.com/elisae/vvs-delay-api#readme",
+  "license": "",
+  "main": "app.js",
   "dependencies": {
-    "cfenv": "1.0.x",
-    "cloudant": "^1.7.1",
-    "express": "^4.15.3"
+    "cloudant": "^1.8.0",
+    "express": "^4.12.3",
+    "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "swagger project test"
   }
 }
