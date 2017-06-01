@@ -36,6 +36,18 @@ paths:
           description: Maximum timestamp milliseconds
           required: false
           type: integer
+        - name: filterEmpty
+          in: query
+          description: Whether to filter entries with empty results
+          required: false
+          default: true
+          type: boolean
+        - name: transform
+          in: query
+          description: Whether to transform the output to bundled format
+          required: false
+          default: false 
+          type: boolean
       responses:
         "200":
           description: Success
